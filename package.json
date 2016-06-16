@@ -1,0 +1,38 @@
+{
+  "name": "hapi-react-ssr",
+  "version": "0.1.0",
+  "description": "Render React isomorphically using react-router in hapi",
+  "main": "lib/index.js",
+  "typings": "lib/index",
+  "scripts": {
+    "test": "lab"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prashaantt/hapi-react-ssr"
+  },
+  "author": "Prashant Tiwari <prashaantt@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prashaantt/hapi-react-ssr/issues"
+  },
+  "homepage": "https://github.com/prashaantt/hapi-react-ssr",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "devDependencies": {
+    "code": "3.x.x",
+    "hapi": "13.x.x",
+    "lab": "10.x.x",
+    "tslint": "3.x.x",
+    "typescript": "1.x.x"
+  },
+  "dependencies": {
+    "boom": "3.x.x",
+    "es6-promise": "3.x.x",
+    "lodash": "4.x.x",
+    "react": "15.x.x",
+    "react-dom": "15.x.x",
+    "react-router": "2.x.x"
+  }
+}

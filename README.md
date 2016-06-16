@@ -15,14 +15,14 @@ npm install hapi-react-ssr vision --save
 
 ## Options
 
-The plugin accepts the following [`options`](https://github.com/prashaantt/hapi-react-ssr/blob/master/src/interfaces.js):
+The plugin accepts the following [`options`](https://github.com/prashaantt/hapi-react-ssr/blob/master/src/interfaces.ts):
 
 - `routes`: The routes defined by `react-router` as a manifest
 - `getInitialContext`: A function to initialise your store(s) and eventually pass on to the client as initial state
 - `bootstrapAction`: The static function to call for server-side rendering from all React components that define it 
 - `rootElement`: The root React element
 - `template`: The template file `/path/name` to use for rendering the view. Internally uses `reply.view` provided by `vision`. The templating engine to use is up to you. See [vision](https://github.com/hapijs/vision) docs.
-- `visionOptions`: The [options](https://github.com/hapijs/hapi/blob/master/API.md#reply-interface) to pass on to `vision`
+- `visionOptions`: The [options](https://github.com/hapijs/vision/blob/master/API.md#reply-interface) to pass on to `vision`
 - `params`: Additional params to pass to the template context object. `componentRenderedToString` and `context` are reserved for internal use (see below).
 - `renderToStaticMarkup`: Choose whether to `renderToStaticMarkup` instead of `renderToString` (default)
 

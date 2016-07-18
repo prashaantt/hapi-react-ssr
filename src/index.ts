@@ -1,3 +1,4 @@
+import * as Boom from "boom";
 import * as Hapi from "hapi";
 import * as History from "history";
 import * as React from "react";
@@ -34,7 +35,8 @@ class HapiReactSSR {
             params,
             rootElement,
             getInitialContext,
-            renderToStaticMarkup
+            renderToStaticMarkup,
+            contextAsParams
         } = this.options;
 
         ReactRouter.match({ routes, location: request.url }, (error: Error, redirectLocation: History.Location, renderProps: any) => {
@@ -58,7 +60,7 @@ class HapiReactSSR {
 
                 const reactRootElement = React.createElement(
                     rootElement,
-                    { context },
+                    contextAsParams ? context : { context },
                     React.createElement(ReactRouter.RouterContext, renderProps)
                 );
 

@@ -17,14 +17,15 @@ npm install hapi-react-ssr vision --save
 
 The plugin accepts the following [`options`](https://github.com/prashaantt/hapi-react-ssr/blob/master/src/interfaces.ts):
 
-- `routes`: The routes defined by `react-router` as a manifest
-- `getInitialContext`: A function to initialise your store(s) and eventually pass on to the client as initial state
-- `bootstrapAction`: The static function to call for server-side rendering from all React components that define it 
-- `rootElement`: The root React element
+- `routes`: The routes defined by `react-router` as a manifest.
+- `getInitialContext`: A function to initialise your store(s) and eventually pass on to the client as initial state.
+- `bootstrapAction`: The static function to call for server-side rendering from all React components that define it.
+- `rootElement`: The root React element.
 - `template`: The template file `/path/name` to use for rendering the view. Internally uses `reply.view` provided by `vision`. The templating engine to use is up to you. See [vision](https://github.com/hapijs/vision) docs.
-- `visionOptions`: The [options](https://github.com/hapijs/vision/blob/master/API.md#reply-interface) to pass on to `vision`
+- `visionOptions`: The [options](https://github.com/hapijs/vision/blob/master/API.md#reply-interface) to pass on to `vision`.
 - `params`: Additional params to pass to the template context object. `componentRenderedToString` and `context` are reserved for internal use (see below).
-- `renderToStaticMarkup`: Choose whether to `renderToStaticMarkup` instead of `renderToString` (default)
+- `renderToStaticMarkup`: Choose whether to `renderToStaticMarkup` (value `true`) instead of `renderToString` (value `false`, default).
+- `contextAsParams`: Choose whether to spread out the context object as various params on the root element (value `true`) or to keep the context inside a single `context` param (value `false`, default).
 
 
 ## Example usage
@@ -55,6 +56,7 @@ export default routes;
 
 import HapiReactSSR from "hapi-react-ssr";
 import Vision from "vision";
+import { Provider } from "mobx-react"; // or use any other Provider to pass context down to all children
 
 ...
 
@@ -71,7 +73,7 @@ const plugins = [
                 }
             },
             bootstrapAction: 'fetchData',
-            rootElement: ContextProvider,
+            rootElement: Provider,
             template: './src/server/index',
             params: {
                 env: process.env.NODE_ENV

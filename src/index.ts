@@ -36,7 +36,7 @@ class HapiReactSSR {
             rootElement,
             getInitialContext,
             renderToStaticMarkup,
-            contextAsParams
+            contextAsProps
         } = this.options;
 
         ReactRouter.match({ routes, location: request.url }, (error: Error, redirectLocation: History.Location, renderProps: any) => {
@@ -60,7 +60,7 @@ class HapiReactSSR {
 
                 const reactRootElement = React.createElement(
                     rootElement,
-                    contextAsParams ? context : { context },
+                    contextAsProps ? context : { context },
                     React.createElement(ReactRouter.RouterContext, renderProps)
                 );
 

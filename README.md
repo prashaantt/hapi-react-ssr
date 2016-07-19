@@ -25,7 +25,7 @@ The plugin accepts the following [`options`](https://github.com/prashaantt/hapi-
 - `visionOptions`: The [options](https://github.com/hapijs/vision/blob/master/API.md#reply-interface) to pass on to `vision`.
 - `params`: Additional params to pass to the template context object. `componentRenderedToString` and `context` are reserved for internal use (see below).
 - `renderToStaticMarkup`: Choose whether to `renderToStaticMarkup` (value `true`) instead of `renderToString` (value `false`, default).
-- `contextAsParams`: Choose whether to spread out the context object as various params on the root element (value `true`) or to keep the context inside a single `context` param (value `false`, default).
+- `contextAsProps`: Choose whether to spread out the context object as separate props on the root element (value `true`) or to keep the context inside a single `context` prop (value `false`, default).
 
 
 ## Example usage

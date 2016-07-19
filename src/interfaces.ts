@@ -28,5 +28,5 @@ export interface Options {
     visionOptions?: any;
     params?: any;
     renderToStaticMarkup?: boolean;
-    contextAsParams?: boolean;
+    contextAsProps?: boolean;
 }

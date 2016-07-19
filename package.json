@@ -1,11 +1,13 @@
 {
   "name": "hapi-react-ssr",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Render React isomorphically using react-router in hapi",
   "main": "lib/index.js",
   "typings": "lib/index",
   "scripts": {
-    "test": "lab"
+    "test": "lab",
+    "build": "tsc",
+    "prepublish": "npm run build && npm run test"
   },
   "repository": {
     "type": "git",
